@@ -11,6 +11,20 @@
 		CE8C91DA29AE95C900D4C095 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8C91D929AE95C900D4C095 /* ContentView.swift */; };
 		CE8C91DC29AE95CB00D4C095 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8C91DB29AE95CB00D4C095 /* Assets.xcassets */; };
 		CE8C91DF29AE95CB00D4C095 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8C91DE29AE95CB00D4C095 /* Preview Assets.xcassets */; };
+		CE8C91E629AE991B00D4C095 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8C91E529AE991B00D4C095 /* Launch Screen.storyboard */; };
+		CEA7CF8229B26F500099C7CB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF8129B26F500099C7CB /* Extensions.swift */; };
+		CEA7CF8429B270BC0099C7CB /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF8329B270BC0099C7CB /* FeedView.swift */; };
+		CEA7CF8629B271210099C7CB /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF8529B271210099C7CB /* PostView.swift */; };
+		CEA7CF8929B2781B0099C7CB /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF8829B2781B0099C7CB /* PostModel.swift */; };
+		CEA7CF8B29B27B930099C7CB /* PostArrayObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF8A29B27B930099C7CB /* PostArrayObject.swift */; };
+		CEA7CF8D29B27EE90099C7CB /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF8C29B27EE90099C7CB /* CommentsView.swift */; };
+		CEA7CF8F29B280C50099C7CB /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF8E29B280C50099C7CB /* MessageView.swift */; };
+		CEA7CF9129B281CA0099C7CB /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF9029B281CA0099C7CB /* CommentModel.swift */; };
+		CEA7CF9329B286010099C7CB /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF9229B286010099C7CB /* BrowseView.swift */; };
+		CEA7CF9529B288CE0099C7CB /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF9429B288CE0099C7CB /* CarouselView.swift */; };
+		CEA7CF9729B291830099C7CB /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF9629B291830099C7CB /* ImageGridView.swift */; };
+		CEA7CF9929B296650099C7CB /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF9829B296650099C7CB /* UploadView.swift */; };
+		CEA7CF9B29B29A380099C7CB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF9A29B29A380099C7CB /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +33,20 @@
 		CE8C91D929AE95C900D4C095 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE8C91DB29AE95CB00D4C095 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8C91DE29AE95CB00D4C095 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CE8C91E529AE991B00D4C095 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		CEA7CF8129B26F500099C7CB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CEA7CF8329B270BC0099C7CB /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		CEA7CF8529B271210099C7CB /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		CEA7CF8829B2781B0099C7CB /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		CEA7CF8A29B27B930099C7CB /* PostArrayObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostArrayObject.swift; sourceTree = "<group>"; };
+		CEA7CF8C29B27EE90099C7CB /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		CEA7CF8E29B280C50099C7CB /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		CEA7CF9029B281CA0099C7CB /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		CEA7CF9229B286010099C7CB /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
+		CEA7CF9429B288CE0099C7CB /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		CEA7CF9629B291830099C7CB /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
+		CEA7CF9829B296650099C7CB /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
+		CEA7CF9A29B29A380099C7CB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +79,12 @@
 		CE8C91D629AE95C900D4C095 /* Flashgram */ = {
 			isa = PBXGroup;
 			children = (
-				CE8C91D729AE95C900D4C095 /* FlashgramApp.swift */,
-				CE8C91D929AE95C900D4C095 /* ContentView.swift */,
+				CEA7CF8729B2780F0099C7CB /* Model */,
+				CEA7CF8029B26F420099C7CB /* Helpers */,
+				CEA7CF7D29B26D6C0099C7CB /* Views */,
 				CE8C91DB29AE95CB00D4C095 /* Assets.xcassets */,
 				CE8C91DD29AE95CB00D4C095 /* Preview Content */,
+				CE8C91E529AE991B00D4C095 /* Launch Screen.storyboard */,
 			);
 			path = Flashgram;
 			sourceTree = "<group>";
@@ -65,6 +95,58 @@
 				CE8C91DE29AE95CB00D4C095 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CEA7CF7D29B26D6C0099C7CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7CF7F29B26D820099C7CB /* SubViews */,
+				CEA7CF7E29B26D7D0099C7CB /* Screens */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CEA7CF7E29B26D7D0099C7CB /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CE8C91D729AE95C900D4C095 /* FlashgramApp.swift */,
+				CE8C91D929AE95C900D4C095 /* ContentView.swift */,
+				CEA7CF9229B286010099C7CB /* BrowseView.swift */,
+				CEA7CF8329B270BC0099C7CB /* FeedView.swift */,
+				CEA7CF8C29B27EE90099C7CB /* CommentsView.swift */,
+				CEA7CF9829B296650099C7CB /* UploadView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CEA7CF7F29B26D820099C7CB /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7CF8529B271210099C7CB /* PostView.swift */,
+				CEA7CF8E29B280C50099C7CB /* MessageView.swift */,
+				CEA7CF9429B288CE0099C7CB /* CarouselView.swift */,
+				CEA7CF9629B291830099C7CB /* ImageGridView.swift */,
+				CEA7CF9A29B29A380099C7CB /* ImagePicker.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		CEA7CF8029B26F420099C7CB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7CF8129B26F500099C7CB /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CEA7CF8729B2780F0099C7CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEA7CF8829B2781B0099C7CB /* PostModel.swift */,
+				CEA7CF8A29B27B930099C7CB /* PostArrayObject.swift */,
+				CEA7CF9029B281CA0099C7CB /* CommentModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8C91E629AE991B00D4C095 /* Launch Screen.storyboard in Resources */,
 				CE8C91DF29AE95CB00D4C095 /* Preview Assets.xcassets in Resources */,
 				CE8C91DC29AE95CB00D4C095 /* Assets.xcassets in Resources */,
 			);
@@ -137,7 +220,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA7CF8429B270BC0099C7CB /* FeedView.swift in Sources */,
+				CEA7CF8929B2781B0099C7CB /* PostModel.swift in Sources */,
 				CE8C91DA29AE95C900D4C095 /* ContentView.swift in Sources */,
+				CEA7CF8F29B280C50099C7CB /* MessageView.swift in Sources */,
+				CEA7CF8229B26F500099C7CB /* Extensions.swift in Sources */,
+				CEA7CF8B29B27B930099C7CB /* PostArrayObject.swift in Sources */,
+				CEA7CF9729B291830099C7CB /* ImageGridView.swift in Sources */,
+				CEA7CF8629B271210099C7CB /* PostView.swift in Sources */,
+				CEA7CF9329B286010099C7CB /* BrowseView.swift in Sources */,
+				CEA7CF9129B281CA0099C7CB /* CommentModel.swift in Sources */,
+				CEA7CF8D29B27EE90099C7CB /* CommentsView.swift in Sources */,
+				CEA7CF9929B296650099C7CB /* UploadView.swift in Sources */,
+				CEA7CF9B29B29A380099C7CB /* ImagePicker.swift in Sources */,
+				CEA7CF9529B288CE0099C7CB /* CarouselView.swift in Sources */,
 				CE8C91D829AE95C900D4C095 /* FlashgramApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,7 +291,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +345,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -264,17 +360,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flashgram/Preview Content\"";
 				DEVELOPMENT_TEAM = 26QG9SLJ95;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow us to use your camera!";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Allow us to use your photo library!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,17 +394,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flashgram/Preview Content\"";
 				DEVELOPMENT_TEAM = 26QG9SLJ95;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Allow us to use your camera!";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Allow us to use your photo library!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
