@@ -8,36 +8,44 @@
 import SwiftUI
 
 struct ContentView: View {
+    var currentUserId: String? = nil
+    
     var body: some View {
         TabView {
             NavigationView {
                 FeedView(posts: PostArrayObject(), title: "Feed View")
-            }
-                .tabItem {
+            }.tabItem {
                     Image(systemName: "book.fill")
                     Text("Feed")
                 }
             
-            NavigationView{
+            NavigationView {
                 BrowseView()
-            }
-                .tabItem {
+            }.tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Browse")
                 }
             
-            NavigationView{
+            NavigationView {
                 UploadView()
-            }
-                .tabItem {
+            }.tabItem {
                     Image(systemName: "square.and.arrow.up.fill")
                     Text("Upload")
                 }
-            Text("Screen 4")
-                .tabItem {
+            
+            ZStack {
+                if currentUserId != nil {
+                    NavigationView {
+                        ProfileView(displayName: "Test Profile Name", profileUserId: "", isMyProfile: true)
+                    }
+                } else {
+                    SignUpView()
+                }
+            }.tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")
                 }
+                
         }
         .accentColor(Color.Flash.purpleColor)
         
@@ -47,5 +55,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
+    } 
 }
