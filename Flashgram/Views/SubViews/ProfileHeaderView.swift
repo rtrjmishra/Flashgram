@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ProfileHeaderView: View {
     @Binding var profileDisplayName: String
+    @Binding var profileImage: UIImage
     
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
             //Profile Image
-            Image("image1")
+            Image(uiImage: profileImage)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 120, height: 120, alignment: .center)
@@ -65,7 +66,7 @@ struct ProfileHeaderView: View {
 
 struct ProfileHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileHeaderView(profileDisplayName: .constant("Test!"))
+        ProfileHeaderView(profileDisplayName: .constant("Test!"), profileImage: .constant(UIImage(systemName: "person")!))
             .previewLayout(.sizeThatFits)
     }
 }

@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct BrowseView: View {
-    var posts = PostArrayObject()
+    var feedPosts: PostArrayObject
     
     var body: some View {
         ScrollView(showsIndicators: false) {
             CarouselView()
-            ImageGridView(posts: posts)
+            ImageGridView(posts: feedPosts)
         }
         .navigationTitle("Browse")
         .navigationBarTitleDisplayMode(.inline)
@@ -24,7 +24,7 @@ struct BrowseView: View {
 struct BrowseView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            BrowseView()
+            BrowseView(feedPosts: PostArrayObject(shuffled: true))
         }
     }
 }

@@ -7,14 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B060F426543F3F16C6071482 /* Pods_Flashgram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5863B15A37A268E1E78795 /* Pods_Flashgram.framework */; };
 		BB135DD629E1E2510084E845 /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB135DD529E1E2510084E845 /* PostImageView.swift */; };
 		BB135DD829E1EABF0084E845 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB135DD729E1EABF0084E845 /* ProfileView.swift */; };
 		BB135DDA29E1EC3E0084E845 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB135DD929E1EC3D0084E845 /* ProfileHeaderView.swift */; };
+		BB27280E2A0FE355003EA32D /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27280D2A0FE355003EA32D /* LazyView.swift */; };
+		BB27B28329FCE9D700B6E4D5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27B28229FCE9D700B6E4D5 /* AuthService.swift */; };
+		BB27B28629FD0C6F00B6E4D5 /* Enums&Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27B28529FD0C6F00B6E4D5 /* Enums&Structs.swift */; };
+		BB27B28929FD254200B6E4D5 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB27B28829FD254200B6E4D5 /* ImageManager.swift */; };
+		BB2E379029FC6191001ED4BC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BB2E378F29FC6191001ED4BC /* FirebaseAnalytics */; };
+		BB2E379229FC6191001ED4BC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BB2E379129FC6191001ED4BC /* FirebaseAuth */; };
+		BB2E379429FC6191001ED4BC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BB2E379329FC6191001ED4BC /* FirebaseFirestore */; };
+		BB2E379629FC6191001ED4BC /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BB2E379529FC6191001ED4BC /* FirebaseFirestoreSwift */; };
+		BB2E379829FC6191001ED4BC /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BB2E379729FC6191001ED4BC /* FirebaseStorage */; };
 		BB34D75B29FAED540086E589 /* SettingsEditImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB34D75A29FAED540086E589 /* SettingsEditImageView.swift */; };
 		BB34D75D29FAF3BA0086E589 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB34D75C29FAF3BA0086E589 /* SignUpView.swift */; };
 		BB34D75F29FAF9A70086E589 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB34D75E29FAF9A70086E589 /* OnboardingView.swift */; };
 		BB34D76129FAFECE0086E589 /* SecondOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB34D76029FAFECE0086E589 /* SecondOnboardingView.swift */; };
 		BB34D76329FB03A00086E589 /* LikeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB34D76229FB03A00086E589 /* LikeAnimationView.swift */; };
+		BB41FD2D29FC5C6100E4643E /* SignInWithGoogle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41FD2C29FC5C6100E4643E /* SignInWithGoogle.swift */; };
+		BB8A3C1829FE336000CA485F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB8A3C1729FE336000CA485F /* GoogleService-Info.plist */; };
+		BB8A3C1A29FE563E00CA485F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8A3C1929FE563E00CA485F /* DataService.swift */; };
 		BBA4588829EC3F1E00DAB71A /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA4588729EC3F1E00DAB71A /* SettingsRowView.swift */; };
 		BBBE154B29EAB003004B9F12 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE154A29EAB003004B9F12 /* SettingsView.swift */; };
 		BBBE154D29EAB29E004B9F12 /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBE154C29EAB29E004B9F12 /* SettingsLabelView.swift */; };
@@ -24,7 +37,7 @@
 		CE8C91DC29AE95CB00D4C095 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8C91DB29AE95CB00D4C095 /* Assets.xcassets */; };
 		CE8C91DF29AE95CB00D4C095 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8C91DE29AE95CB00D4C095 /* Preview Assets.xcassets */; };
 		CE8C91E629AE991B00D4C095 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8C91E529AE991B00D4C095 /* Launch Screen.storyboard */; };
-		CEA7CF8229B26F500099C7CB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF8129B26F500099C7CB /* Extensions.swift */; };
+		CEA7CF8229B26F500099C7CB /* Extensions+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF8129B26F500099C7CB /* Extensions+Color.swift */; };
 		CEA7CF8429B270BC0099C7CB /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF8329B270BC0099C7CB /* FeedView.swift */; };
 		CEA7CF8629B271210099C7CB /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF8529B271210099C7CB /* PostView.swift */; };
 		CEA7CF8929B2781B0099C7CB /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7CF8829B2781B0099C7CB /* PostModel.swift */; };
@@ -40,25 +53,36 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C5863B15A37A268E1E78795 /* Pods_Flashgram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flashgram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5D71C93F9C2B709AC19E080 /* Pods-Flashgram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashgram.debug.xcconfig"; path = "Target Support Files/Pods-Flashgram/Pods-Flashgram.debug.xcconfig"; sourceTree = "<group>"; };
 		BB135DD529E1E2510084E845 /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
 		BB135DD729E1EABF0084E845 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		BB135DD929E1EC3D0084E845 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		BB27280D2A0FE355003EA32D /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
+		BB27B28229FCE9D700B6E4D5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		BB27B28529FD0C6F00B6E4D5 /* Enums&Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enums&Structs.swift"; sourceTree = "<group>"; };
+		BB27B28829FD254200B6E4D5 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		BB34D75A29FAED540086E589 /* SettingsEditImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditImageView.swift; sourceTree = "<group>"; };
 		BB34D75C29FAF3BA0086E589 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		BB34D75E29FAF9A70086E589 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		BB34D76029FAFECE0086E589 /* SecondOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboardingView.swift; sourceTree = "<group>"; };
 		BB34D76229FB03A00086E589 /* LikeAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAnimationView.swift; sourceTree = "<group>"; };
+		BB41FD2929FC5B5000E4643E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BB41FD2C29FC5C6100E4643E /* SignInWithGoogle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithGoogle.swift; sourceTree = "<group>"; };
+		BB8A3C1729FE336000CA485F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BB8A3C1929FE563E00CA485F /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		BBA4588729EC3F1E00DAB71A /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		BBBE154A29EAB003004B9F12 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BBBE154C29EAB29E004B9F12 /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
 		BBD61A0C29FAE11E0020E22E /* SettingsEditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditTextView.swift; sourceTree = "<group>"; };
+		C26B5F15624A02195F44434B /* Pods-Flashgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashgram.release.xcconfig"; path = "Target Support Files/Pods-Flashgram/Pods-Flashgram.release.xcconfig"; sourceTree = "<group>"; };
 		CE8C91D429AE95C900D4C095 /* Flashgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8C91D729AE95C900D4C095 /* FlashgramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashgramApp.swift; sourceTree = "<group>"; };
 		CE8C91D929AE95C900D4C095 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE8C91DB29AE95CB00D4C095 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE8C91DE29AE95CB00D4C095 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE8C91E529AE991B00D4C095 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		CEA7CF8129B26F500099C7CB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CEA7CF8129B26F500099C7CB /* Extensions+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Color.swift"; sourceTree = "<group>"; };
 		CEA7CF8329B270BC0099C7CB /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		CEA7CF8529B271210099C7CB /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		CEA7CF8829B2781B0099C7CB /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -78,17 +102,76 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2E379629FC6191001ED4BC /* FirebaseFirestoreSwift in Frameworks */,
+				BB2E379029FC6191001ED4BC /* FirebaseAnalytics in Frameworks */,
+				BB2E379429FC6191001ED4BC /* FirebaseFirestore in Frameworks */,
+				BB2E379229FC6191001ED4BC /* FirebaseAuth in Frameworks */,
+				B060F426543F3F16C6071482 /* Pods_Flashgram.framework in Frameworks */,
+				BB2E379829FC6191001ED4BC /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		015E64AD3D939FD4942C88A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B5D71C93F9C2B709AC19E080 /* Pods-Flashgram.debug.xcconfig */,
+				C26B5F15624A02195F44434B /* Pods-Flashgram.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		02B5436F36B04E87F79B50B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C5863B15A37A268E1E78795 /* Pods_Flashgram.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB27B28129FCE9C000B6E4D5 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				BB27B28229FCE9D700B6E4D5 /* AuthService.swift */,
+				BB8A3C1929FE563E00CA485F /* DataService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		BB27B28729FD252600B6E4D5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BB27B28829FD254200B6E4D5 /* ImageManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BB41FD2A29FC5C3D00E4643E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BB27B28129FCE9C000B6E4D5 /* Firebase */,
+				BB41FD2B29FC5C4B00E4643E /* SignInProvider */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BB41FD2B29FC5C4B00E4643E /* SignInProvider */ = {
+			isa = PBXGroup;
+			children = (
+				BB41FD2C29FC5C6100E4643E /* SignInWithGoogle.swift */,
+			);
+			path = SignInProvider;
+			sourceTree = "<group>";
+		};
 		CE8C91CB29AE95C900D4C095 = {
 			isa = PBXGroup;
 			children = (
 				CE8C91D629AE95C900D4C095 /* Flashgram */,
 				CE8C91D529AE95C900D4C095 /* Products */,
+				02B5436F36B04E87F79B50B8 /* Frameworks */,
+				015E64AD3D939FD4942C88A1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +186,14 @@
 		CE8C91D629AE95C900D4C095 /* Flashgram */ = {
 			isa = PBXGroup;
 			children = (
+				BB27B28729FD252600B6E4D5 /* Utilities */,
+				BB41FD2A29FC5C3D00E4643E /* Services */,
 				CEA7CF8729B2780F0099C7CB /* Model */,
 				CEA7CF8029B26F420099C7CB /* Helpers */,
 				CEA7CF7D29B26D6C0099C7CB /* Views */,
 				CE8C91DB29AE95CB00D4C095 /* Assets.xcassets */,
+				BB8A3C1729FE336000CA485F /* GoogleService-Info.plist */,
+				BB41FD2929FC5B5000E4643E /* Info.plist */,
 				CE8C91DD29AE95CB00D4C095 /* Preview Content */,
 				CE8C91E529AE991B00D4C095 /* Launch Screen.storyboard */,
 			);
@@ -170,7 +257,9 @@
 		CEA7CF8029B26F420099C7CB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CEA7CF8129B26F500099C7CB /* Extensions.swift */,
+				CEA7CF8129B26F500099C7CB /* Extensions+Color.swift */,
+				BB27B28529FD0C6F00B6E4D5 /* Enums&Structs.swift */,
+				BB27280D2A0FE355003EA32D /* LazyView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -192,15 +281,25 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE8C91E229AE95CB00D4C095 /* Build configuration list for PBXNativeTarget "Flashgram" */;
 			buildPhases = (
+				86E77D521CC1B71B04DD66E9 /* [CP] Check Pods Manifest.lock */,
 				CE8C91D029AE95C900D4C095 /* Sources */,
 				CE8C91D129AE95C900D4C095 /* Frameworks */,
 				CE8C91D229AE95C900D4C095 /* Resources */,
+				B2D3AB51430F041BD358BAB0 /* [CP] Embed Pods Frameworks */,
+				9DD6FF51417EE2DABF31E099 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Flashgram;
+			packageProductDependencies = (
+				BB2E378F29FC6191001ED4BC /* FirebaseAnalytics */,
+				BB2E379129FC6191001ED4BC /* FirebaseAuth */,
+				BB2E379329FC6191001ED4BC /* FirebaseFirestore */,
+				BB2E379529FC6191001ED4BC /* FirebaseFirestoreSwift */,
+				BB2E379729FC6191001ED4BC /* FirebaseStorage */,
+			);
 			productName = Flashgram;
 			productReference = CE8C91D429AE95C900D4C095 /* Flashgram.app */;
 			productType = "com.apple.product-type.application";
@@ -229,6 +328,9 @@
 				Base,
 			);
 			mainGroup = CE8C91CB29AE95C900D4C095;
+			packageReferences = (
+				BB2E378E29FC6191001ED4BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CE8C91D529AE95C900D4C095 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -244,12 +346,72 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8C91E629AE991B00D4C095 /* Launch Screen.storyboard in Resources */,
+				BB8A3C1829FE336000CA485F /* GoogleService-Info.plist in Resources */,
 				CE8C91DF29AE95CB00D4C095 /* Preview Assets.xcassets in Resources */,
 				CE8C91DC29AE95CB00D4C095 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		86E77D521CC1B71B04DD66E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flashgram-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DD6FF51417EE2DABF31E099 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flashgram/Pods-Flashgram-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flashgram/Pods-Flashgram-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flashgram/Pods-Flashgram-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2D3AB51430F041BD358BAB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flashgram/Pods-Flashgram-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flashgram/Pods-Flashgram-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flashgram/Pods-Flashgram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE8C91D029AE95C900D4C095 /* Sources */ = {
@@ -258,23 +420,29 @@
 			files = (
 				CEA7CF8429B270BC0099C7CB /* FeedView.swift in Sources */,
 				CEA7CF8929B2781B0099C7CB /* PostModel.swift in Sources */,
+				BB27B28929FD254200B6E4D5 /* ImageManager.swift in Sources */,
 				BBBE154D29EAB29E004B9F12 /* SettingsLabelView.swift in Sources */,
 				BB135DD629E1E2510084E845 /* PostImageView.swift in Sources */,
 				BB34D75D29FAF3BA0086E589 /* SignUpView.swift in Sources */,
 				CE8C91DA29AE95C900D4C095 /* ContentView.swift in Sources */,
 				BB34D76329FB03A00086E589 /* LikeAnimationView.swift in Sources */,
 				CEA7CF8F29B280C50099C7CB /* MessageView.swift in Sources */,
-				CEA7CF8229B26F500099C7CB /* Extensions.swift in Sources */,
+				CEA7CF8229B26F500099C7CB /* Extensions+Color.swift in Sources */,
 				CEA7CF8B29B27B930099C7CB /* PostArrayObject.swift in Sources */,
+				BB27B28629FD0C6F00B6E4D5 /* Enums&Structs.swift in Sources */,
 				BB34D76129FAFECE0086E589 /* SecondOnboardingView.swift in Sources */,
+				BB27B28329FCE9D700B6E4D5 /* AuthService.swift in Sources */,
 				CEA7CF9729B291830099C7CB /* ImageGridView.swift in Sources */,
 				CEA7CF8629B271210099C7CB /* PostView.swift in Sources */,
 				BB135DD829E1EABF0084E845 /* ProfileView.swift in Sources */,
 				CEA7CF9329B286010099C7CB /* BrowseView.swift in Sources */,
+				BB27280E2A0FE355003EA32D /* LazyView.swift in Sources */,
 				CEA7CF9129B281CA0099C7CB /* CommentModel.swift in Sources */,
 				BB34D75B29FAED540086E589 /* SettingsEditImageView.swift in Sources */,
 				CEA7CF8D29B27EE90099C7CB /* CommentsView.swift in Sources */,
+				BB41FD2D29FC5C6100E4643E /* SignInWithGoogle.swift in Sources */,
 				BB135DDA29E1EC3E0084E845 /* ProfileHeaderView.swift in Sources */,
+				BB8A3C1A29FE563E00CA485F /* DataService.swift in Sources */,
 				CEA7CF9929B296650099C7CB /* UploadView.swift in Sources */,
 				BB34D75F29FAF9A70086E589 /* OnboardingView.swift in Sources */,
 				CEA7CF9B29B29A380099C7CB /* ImagePicker.swift in Sources */,
@@ -405,16 +573,19 @@
 		};
 		CE8C91E329AE95CB00D4C095 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5D71C93F9C2B709AC19E080 /* Pods-Flashgram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flashgram/Preview Content\"";
 				DEVELOPMENT_TEAM = 26QG9SLJ95;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Flashgram/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow us to use your camera!";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Allow us to use your photo library!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -429,8 +600,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.riturajmishra.Flashgram;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riturajmishra719.Flashgram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -439,16 +611,19 @@
 		};
 		CE8C91E429AE95CB00D4C095 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C26B5F15624A02195F44434B /* Pods-Flashgram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Flashgram/Preview Content\"";
 				DEVELOPMENT_TEAM = 26QG9SLJ95;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Flashgram/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow us to use your camera!";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Allow us to use your photo library!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -463,8 +638,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.riturajmishra.Flashgram;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riturajmishra719.Flashgram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -493,6 +669,46 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BB2E378E29FC6191001ED4BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 10.0.0;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BB2E378F29FC6191001ED4BC /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB2E378E29FC6191001ED4BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		BB2E379129FC6191001ED4BC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB2E378E29FC6191001ED4BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		BB2E379329FC6191001ED4BC /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB2E378E29FC6191001ED4BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		BB2E379529FC6191001ED4BC /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB2E378E29FC6191001ED4BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		BB2E379729FC6191001ED4BC /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB2E378E29FC6191001ED4BC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE8C91CC29AE95C900D4C095 /* Project object */;
 }

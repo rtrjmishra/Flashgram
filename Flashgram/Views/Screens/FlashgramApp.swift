@@ -6,12 +6,22 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import GoogleSignIn
 
 @main
 struct FlashgramApp: App {
+    init() {
+        FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID //GSign In
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onOpenURL { url in
+                    GIDSignIn.sharedInstance().handle(url) //GSign In
+                }
         }
     }
 }

@@ -27,7 +27,7 @@ struct ImageGridView: View {
 
 struct ImageGridView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageGridView(posts: PostArrayObject())
+        ImageGridView(posts: PostArrayObject(shuffled: false))
             .previewLayout(.sizeThatFits)
     }
 }

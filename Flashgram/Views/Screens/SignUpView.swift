@@ -14,7 +14,7 @@ struct SignUpView: View {
         VStack(alignment: .center, spacing: 40) {
             Spacer()
             
-            Image("uploadPageLogo")
+            Image("onboardingLogo")
                 .resizable()
                 .scaledToFill()
                 .frame(width: 100, height: 100, alignment: .center)
@@ -26,12 +26,13 @@ struct SignUpView: View {
                 .fontWeight(.bold)
                 .lineLimit(1)
                 .minimumScaleFactor(0.5)
-                .foregroundColor(Color.Flash.purpleColor)
+                .foregroundColor(Color.Flash.beigeColor)
             
             Text("Click the button below to create an account and join the family")
                 .font(.headline)
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
+                .foregroundColor(Color.Flash.beigeColor)
             
             Button {
                 showOnboarding.toggle()
@@ -42,9 +43,9 @@ struct SignUpView: View {
                     .padding()
                     .frame(height: 60)
                     .frame(maxWidth: .infinity)
-                    .background(Color.Flash.purpleColor)
+                    .background(Color.Flash.yellowColor)
                     .cornerRadius(12)
-                    .accentColor(Color.Flash.yellowColor)
+                    .accentColor(Color.Flash.purpleColor)
                     .padding(.horizontal, 50)
                     .shadow(radius: 20)
             }
@@ -53,7 +54,7 @@ struct SignUpView: View {
             Spacer()
         }
         .padding(40)
-        .background(Color.Flash.beigeColor).edgesIgnoringSafeArea(.top)
+        .background(Color.Flash.purpleColor).edgesIgnoringSafeArea(.top)
         .fullScreenCover(isPresented: $showOnboarding) {
             OnboardingView()
         }

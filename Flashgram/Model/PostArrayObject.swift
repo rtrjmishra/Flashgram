@@ -10,20 +10,32 @@ import Foundation
 class PostArrayObject: ObservableObject {
     @Published var dataArray = [PostModel]()
     
-    init() {
-        let post1 = PostModel(postId: "", userId: "", username: "user1", date: Date(), noOfLikes: 2, likedByUser: true)
-        let post2 = PostModel(postId: "", userId: "", username: "user2", caption: "Caption by user2", date: Date(), noOfLikes: 2, likedByUser: true)
-        let post3 = PostModel(postId: "", userId: "", username: "user3", caption: "Caption by user3", date: Date(), noOfLikes: 2, likedByUser: true)
-        let post4 = PostModel(postId: "", userId: "", username: "user4", caption: "Caption by user4 which is a realyy long caption ng;l!!!!", date: Date(), noOfLikes: 2, likedByUser: true)
-        
-        self.dataArray.append(post1)
-        self.dataArray.append(post2)
-        self.dataArray.append(post3)
-        self.dataArray.append(post4)
-    }
-    
     /// USED FOR SINGLE POST SELECTION
     init(post: PostModel) {
         dataArray.append(post)
     }
+    
+    /// Used for getting post for custom profile
+    init(userID: String) {
+        print("User ID Posts")
+        DataService.shared.downloadPostForUser(userID: userID) { returnedPosts in
+            let sortedPosts = returnedPosts.sorted { $0.date > $1.date }
+            self.dataArray.append(contentsOf: sortedPosts)
+        }
+    }
+    
+    /// Used For Feeds
+    init(shuffled: Bool) {
+        print("Shuffled Posts")
+        DataService.shared.downloadPostForFeed { returnedPosts in
+            if shuffled {
+                let shuffledPosts = returnedPosts.shuffled()
+                self.dataArray.append(contentsOf: shuffledPosts)
+            } else {
+                self.dataArray.append(contentsOf: returnedPosts)
+            }
+        }
+    }
+    
+    
 }

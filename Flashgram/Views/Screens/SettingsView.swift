@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
+    @State var showError: Bool = false
     
     var body: some View {
         NavigationView {
@@ -47,8 +48,12 @@ struct SettingsView: View {
                     } label: {
                         SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.Flash.purpleColor)
                     }
-
-                    SettingsRowView(leftIcon: "figure.walk", text: "Sign Out", color: Color.Flash.purpleColor)
+                    
+                    Button {
+                        signOut()
+                    } label: {
+                        SettingsRowView(leftIcon: "figure.walk", text: "Sign Out", color: Color.Flash.purpleColor)
+                    }
                 }
                 .padding()
                 
@@ -78,6 +83,9 @@ struct SettingsView: View {
             .navigationBarTitleDisplayMode(.large)
             .navigationBarItems(leading: Button { presentationMode.wrappedValue.dismiss() } label: { Image(systemName: "xmark").font(.headline) } .accentColor(.primary))
         }
+        .alert(isPresented: $showError) {
+            return Alert(title: Text("Error Signing Out 😵"))
+        }
     }
     
     //MARK: - Functions
@@ -87,6 +95,19 @@ struct SettingsView: View {
             UIApplication.shared.open(url)
         }
     }
+    
+    func signOut() {
+        AuthService.shared.logOutUser { success in
+            if success ?? false {
+                print("Successfully logged Out user")
+                //Dismiss Screen
+                self.presentationMode.wrappedValue.dismiss()
+            } else {
+                self.showError.toggle()
+            }
+        }
+    }
+    
 }
 
 struct SettingsView_Previews: PreviewProvider {

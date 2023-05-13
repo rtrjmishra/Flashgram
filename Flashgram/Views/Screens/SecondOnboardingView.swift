@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct SecondOnboardingView: View {
-    @State var displayName: String = ""
+    @Binding var displayName: String
+    @Binding var email: String
+    @Binding var providerId: String
+    @Binding var provider: String
+    
     @State var showImagePicker: Bool = false
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @State var imageSelected: UIImage = UIImage(named: "image1")!
     
+    @State var showError: Bool = false
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
-            Image("uploadPageLogo")
+            Image("onboardingLogo")
                 .resizable()
                 .scaledToFill()
                 .frame(width: 100, height: 100, alignment: .center)
@@ -63,17 +71,38 @@ struct SecondOnboardingView: View {
         .sheet(isPresented: $showImagePicker, onDismiss: createProfile, content: {
             ImagePicker(imageSelected: $imageSelected, sourceType: $sourceType)
         })
+        .alert(isPresented: $showError) {
+            return Alert(title: Text("Error Creating Profile 😰"))
+        }
     }
     
     //MARK: - Function
-    
     func createProfile() {
-        
+        AuthService.shared.createNewUserInDatabase(name: displayName, email: email, provider: provider, providerID: providerId, profileImage: imageSelected) { userID in
+            guard let userID else {
+                print("Error creating user to database!")
+                self.showError.toggle()
+                return
+            }
+            
+            AuthService.shared.logInUserToApp(userId: userID) { success in
+                if success {
+                    print("User logged In")
+                    DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    })
+                } else {
+                    print("Error logging in")
+                    self.showError.toggle()
+                }
+            }
+            
+        }
     }
 }
 
 struct SecondOnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondOnboardingView()
+        SecondOnboardingView(displayName: .constant(""), email: .constant(""), providerId: .constant(""), provider: .constant(""))
     }
 }

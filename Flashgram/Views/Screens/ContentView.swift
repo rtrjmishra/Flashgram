@@ -8,19 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    var currentUserId: String? = nil
+    
+    @AppStorage(UserDefaultsFields.userId) var currentUserID: String?
+    @AppStorage(UserDefaultsFields.displayName) var currentUserDisplayName: String?
+    let feedPosts = PostArrayObject(shuffled: false)
     
     var body: some View {
         TabView {
             NavigationView {
-                FeedView(posts: PostArrayObject(), title: "Feed View")
+                FeedView(posts: feedPosts, title: "Feed View")
             }.tabItem {
                     Image(systemName: "book.fill")
                     Text("Feed")
                 }
             
             NavigationView {
-                BrowseView()
+                BrowseView(feedPosts: PostArrayObject(shuffled: true))
             }.tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Browse")
@@ -34,9 +37,9 @@ struct ContentView: View {
                 }
             
             ZStack {
-                if currentUserId != nil {
+                if let currentUserID, let currentUserDisplayName {
                     NavigationView {
-                        ProfileView(displayName: "Test Profile Name", profileUserId: "", isMyProfile: true)
+                        ProfileView(displayName: currentUserDisplayName, profileUserId: currentUserID, isMyProfile: true, posts: PostArrayObject(userID: currentUserID))
                     }
                 } else {
                     SignUpView()
