@@ -13,6 +13,10 @@ struct SettingsEditImageView: View {
     @State var selectedImage: UIImage //Image shown on this screen.
     @State var showImagePicker: Bool = false
     @State var sourceType: UIImagePickerController.SourceType
+    @Binding var profileImage: UIImage
+    @AppStorage(UserDefaultsFields.userId) var currentUserID: String?
+    @State var showSuccessAlert: Bool = false
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -42,6 +46,7 @@ struct SettingsEditImageView: View {
             }
 
             Button {
+                saveImage()
             } label: {
                 Text("Save".uppercased())
                     .font(.title3)
@@ -58,22 +63,31 @@ struct SettingsEditImageView: View {
         .padding()
         .frame(maxWidth: .infinity)
         .navigationTitle(title)
-        .sheet(isPresented: $showImagePicker,
-//               , onDismiss: {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-//                showImagePicker.toggle()
-//            })
-//        },
-               content: {
+        .sheet(isPresented: $showImagePicker, content: {
             ImagePicker(imageSelected: $selectedImage, sourceType: $sourceType)
         })
+        .alert(isPresented: $showSuccessAlert) {
+            return Alert(title: Text("Updated🎉"), dismissButton: .default(Text("Ok"), action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }))
+        }
+    }
+    
+    func saveImage() {
+        guard let currentUserID else { return }
+        //Update UI on profile!
+        self.profileImage = selectedImage
+        
+        //Update image on database
+        ImageManager.shared.uploadProfileImage(userID: currentUserID, image: selectedImage)
+        self.showSuccessAlert.toggle()
     }
 }
 
 struct SettingsEditImageView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SettingsEditImageView(title: "Demo Title", description: "Desc!", selectedImage: UIImage(named: "image1")!, sourceType: .photoLibrary)
+            SettingsEditImageView(title: "Demo Title", description: "Desc!", selectedImage: UIImage(named: "image1")!, sourceType: .photoLibrary, profileImage: .constant(UIImage(named: "image1")!))
         }
     }
 }

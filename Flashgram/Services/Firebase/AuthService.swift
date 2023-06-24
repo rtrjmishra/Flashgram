@@ -22,6 +22,7 @@ class AuthService {
     static let shared = AuthService()
     private var ref_users = Constants.shared.db_base.collection("users")
     
+    //MARK: -AUTH USER FUNCS
     func logInUserToFirebase(cred: AuthCredential, completion: @escaping (_ providerID: String?, _ isError: Bool, _ isNewUser: Bool?, _ userID: String?) -> ()) {
         Auth.auth().signIn(with: cred) { (result, error) in
             //Error Check!
@@ -112,7 +113,7 @@ class AuthService {
         }
     }
     
-    //MARK: USER FUNCS
+    //MARK: -GET USER FUNCS
     func getUserInfo(userId: String, completion: @escaping (_ name: String?, _ bio: String?) -> ()) {
         ref_users.document(userId).getDocument { documentSnapshot, error in
             if  let documentSnapshot,
@@ -146,4 +147,34 @@ class AuthService {
         })
     }
     
+    //MARK: -UPDATE USER FUNCS
+    func updateUserDisplayName(userID: String, displayName: String, completion: @escaping(_ success: Bool)-> ()) {
+        let data: [String: Any] = [
+            DatabaseUserField.displayName: displayName
+        ]
+        ref_users.document(userID).updateData(data, completion: { error in
+            guard error == nil else {
+                print("Error in updating display name")
+                completion(false)
+                return
+            }
+            completion(true)
+            return
+        })
+    }
+    
+    func updateUserBio(userID: String, bio: String, completion: @escaping(_ success: Bool)-> ()) {
+        let data: [String: Any] = [
+            DatabaseUserField.bio: bio
+        ]
+        ref_users.document(userID).updateData(data, completion: { error in
+            guard error == nil else {
+                print("Error in updating Bio")
+                completion(false)
+                return
+            }
+            completion(true)
+            return
+        })
+    }
 }

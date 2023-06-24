@@ -10,9 +10,15 @@ import SwiftUI
 struct CommentsView: View {
     @State var submissionText: String = ""
     @State var commentsArray = [CommentModel]()
+    var post: PostModel
+    
+    @State var profilePicture: UIImage = UIImage(named: "loadingImage")!
+    @AppStorage(UserDefaultsFields.userId) var currentUserID: String?
+    @AppStorage(UserDefaultsFields.displayName) var currentDisplayName: String?
     
     var body: some View {
         VStack {
+            //Messages Scroll View!
             ScrollView {
                 LazyVStack(spacing: 10) {
                     ForEach(commentsArray, id: \.self) { comment in
@@ -21,11 +27,12 @@ struct CommentsView: View {
                 }
             }
             
+            //Bottom messagecreate view.
             Divider()
                 .background(Color.Flash.purpleColor)
             
             HStack {
-                Image("image1")
+                Image(uiImage: profilePicture)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 40, height: 40, alignment: .center)
@@ -34,6 +41,9 @@ struct CommentsView: View {
                 TextField("Add a comment here...", text: $submissionText)
                 
                 Button {
+                    if appropriateText() {
+                        addComment()
+                    }
                 } label: {
                     Image(systemName: "paperplane.fill")
                         .font(.title2)
@@ -46,28 +56,61 @@ struct CommentsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             getComments()
+            getProfilePicture()
         }
     }
     
     //MARK: Helper Functions
-    func getComments() {
-        //get comments from database but rn only static!
-        let comment1 = CommentModel(commentId: "", userId: "", username: "user1", content: "Wow from user1", date: Date())
-        let comment2 = CommentModel(commentId: "", userId: "", username: "user2", content: "Wow from user2", date: Date())
-        let comment3 = CommentModel(commentId: "", userId: "", username: "user3", content: "Wow from user3", date: Date())
-        let comment4 = CommentModel(commentId: "", userId: "", username: "user4", content: "Wow from user4", date: Date())
-        
-        self.commentsArray.append(comment1)
-        self.commentsArray.append(comment2)
-        self.commentsArray.append(comment3)
-        self.commentsArray.append(comment4)
+    func getProfilePicture() {
+        guard let currentUserID else {
+            print("User ID missing!")
+            return
+        }
+        ImageManager.shared.downloadProfileImage(userID: currentUserID) { image in
+            guard let image else {
+                print("Image not found!")
+                return
+            }
+            self.profilePicture = image
+        }
     }
+    
+    func getComments() {
+        self.commentsArray.removeAll()
+        DataService.shared.downloadCommentsForPost(postID: post.postId) { comments in
+            self.commentsArray.append(contentsOf: comments)
+        }
+    }
+    
+    func appropriateText() -> Bool {
+        if submissionText.count < 3 {
+            return false
+        }
+        
+        return true
+    }
+    
+    func addComment() {
+        guard let currentUserID, let currentDisplayName else {
+            print("Error as user id or name missing!")
+            return
+        }
+        DataService.shared.uploadComment(postID: post.postId, comment: submissionText, displayName: currentDisplayName, userID: currentUserID) { success, commentID in
+            if success, let commentID {
+                let newComment = CommentModel(commentId: commentID, userId: currentUserID, username: currentDisplayName, content: submissionText, date: Date())
+                self.commentsArray.append(newComment)
+                self.submissionText = ""
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
+        }
+    }
+    
 }
 
 struct CommentsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CommentsView(submissionText: "")
+            CommentsView(submissionText: "", post: PostModel(postId: "", userId: "", username: "", date: Date(), noOfLikes: 0, likedByUser: false))
         }
     }
 }

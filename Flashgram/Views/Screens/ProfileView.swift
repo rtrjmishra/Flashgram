@@ -14,12 +14,13 @@ struct ProfileView: View {
     @State var showSettings: Bool = false
     @State var showAlert: Bool = false
     @State var profileImage: UIImage = UIImage(named: "loadingImage")!
+    @State var profileBio: String = ""
     
     var posts: PostArrayObject
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            ProfileHeaderView(profileDisplayName: $displayName, profileImage: $profileImage)
+            ProfileHeaderView(profileDisplayName: $displayName, profileImage: $profileImage, profileBio: $profileBio, postArray: posts)
             Divider()
             ImageGridView(posts: posts)
         }
@@ -29,10 +30,11 @@ struct ProfileView: View {
                                 Button { showSettings.toggle() } label: { Image(systemName: "line.horizontal.3").opacity(isMyProfile ? 1 : 0) }
             .accentColor(Color.Flash.purpleColor))
         .sheet(isPresented: $showSettings) {
-            SettingsView()
+            SettingsView(userDisplayName: $displayName, userBio: $profileBio, userProfilePicture: $profileImage)
         }
         .onAppear {
             getProfileImage()
+            getProfileInfo()
         }
         .alert(isPresented: $showAlert) {
             return Alert(title: Text("Cannot get the image from Web😫"))
@@ -47,6 +49,15 @@ struct ProfileView: View {
                 return
             }
             self.profileImage = image
+        }
+    }
+    
+    private func getProfileInfo() {
+        AuthService.shared.getUserInfo(userId: profileUserId) { name, bio in
+            if let name, let bio {
+                self.displayName = name
+                self.profileBio = bio
+            }
         }
     }
 }

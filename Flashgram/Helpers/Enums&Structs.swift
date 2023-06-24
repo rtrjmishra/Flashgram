@@ -33,10 +33,23 @@ struct DatabasePostField {
     static let dateCreated  = "date_created"
     static let likeCount = "like_count" //Int
     static let likedBy = "liked_by" //Array of Users!
+    static let comments = "comments" //Sub collection
 }
 
 struct DatabaseReportField {
     static let content = "content"
     static let postID = "post_id"
     static let dateCreated = "date_created"
+}
+
+struct DatabaseCommentsField {
+    static let commentID = "comment_id"
+    static let displayName = "display_name"
+    static let userId = "user_id"
+    static let content = "content"
+    static let dateCreated = "date_created"
+}
+
+enum SettingsEditTextOptions {
+    case displayName, bio
 }

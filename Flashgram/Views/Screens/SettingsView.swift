@@ -10,6 +10,9 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var showError: Bool = false
+    @Binding var userDisplayName: String
+    @Binding var userBio: String
+    @Binding var userProfilePicture: UIImage
     
     var body: some View {
         NavigationView {
@@ -32,19 +35,19 @@ struct SettingsView: View {
                 //MARK: - Section Profile
                 GroupBox(label: SettingsLabelView(labelText: "Flashgram", labelImage: "dot.radiowaves.left.and.right")) {
                     NavigationLink {
-                        SettingsEditTextView(title: "Display Name", description: "You can edit your display name here, this will be seen by other users on your profile.", submissionText: "Current Display Name", placeholder: "Your display name here...")
+                        SettingsEditTextView(title: "Display Name", description: "You can edit your display name here, this will be seen by other users on your profile.", submissionText: userDisplayName, placeholder: "Your display name here...", settingsEditTextOption: .displayName, profileText: $userDisplayName)
                     } label: {
                         SettingsRowView(leftIcon: "pencil", text: "Display Name", color: Color.Flash.purpleColor)
                     }
                     
                     NavigationLink {
-                        SettingsEditTextView(title: "Bio", description: "You can edit your bio here, this will be seen by other users when people see your profile profile.", submissionText: "Current Bio", placeholder: "Your Bio...")
+                        SettingsEditTextView(title: "User Bio", description: "You can edit your bio here, this will be seen by other users when people see your profile profile.", submissionText: userBio, placeholder: "Your Bio goes here...", settingsEditTextOption: .bio, profileText: $userBio)
                     } label: {
                         SettingsRowView(leftIcon: "text.quote", text: "Bio", color: Color.Flash.purpleColor)
                     }
                     
                     NavigationLink {
-                        SettingsEditImageView(title: "Profile Picture", description: "Your profile picture will be shown on your profile and on your posts, most users make an image of themselves.", selectedImage: UIImage(named: "image1")!, sourceType: .photoLibrary)
+                        SettingsEditImageView(title: "Profile Picture", description: "Your profile picture will be shown on your profile and on your posts, most users make an image of themselves.", selectedImage: userProfilePicture, sourceType: .photoLibrary, profileImage: $userProfilePicture)
                     } label: {
                         SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.Flash.purpleColor)
                     }
@@ -112,6 +115,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(userDisplayName: .constant("Test Name"), userBio: .constant("Test Bio"), userProfilePicture: .constant(UIImage(named: "image1")!))
     }
 }

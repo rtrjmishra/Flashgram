@@ -71,6 +71,26 @@ class DataService {
         }
     }
     
+    func uploadComment(postID: String, comment: String, displayName: String, userID: String, completion: @escaping(_ success: Bool, _ commentID: String?) -> ()) {
+        let document = ref_posts.document(postID).collection(DatabasePostField.comments).document()
+        let commentID = document.documentID
+        let data: [String: Any] = [
+            DatabaseCommentsField.userId: userID,
+            DatabaseCommentsField.commentID: commentID,
+            DatabaseCommentsField.content: comment,
+            DatabaseCommentsField.displayName: displayName,
+            DatabaseCommentsField.dateCreated: FieldValue.serverTimestamp(),
+        ]
+        document.setData(data) { error in
+            guard error != nil else {
+                print("Commented Successfully!")
+                return completion(true, commentID)
+            }
+            
+            return completion(false, nil)
+        }
+    }
+    
     //MARK: - GET Functions
     func downloadPostForUser(userID: String, completion: @escaping(_ post: [PostModel]) -> ()) {
         ref_posts.whereField(DatabasePostField.userId, isEqualTo: userID).getDocuments { querySnap, error in
@@ -121,6 +141,36 @@ class DataService {
         }
     }
     
+    func downloadCommentsForPost(postID: String, completion: @escaping(_ comments: [CommentModel]) -> ()) {
+        ref_posts.document(postID).collection(DatabasePostField.comments).order(by: DatabaseCommentsField.dateCreated, descending: false).getDocuments { querySnap, error in
+            guard error == nil else {
+                print("Error in getting comments from firebase for post")
+                return completion([])
+            }
+            completion(self.getCommentsFromSnapshot(querySnap: querySnap))
+        }
+    }
+    
+    private func getCommentsFromSnapshot(querySnap: QuerySnapshot?) -> [CommentModel] {
+        var commentsArray = [CommentModel]()
+        if let querySnap, !querySnap.documents.isEmpty {
+            for doc in querySnap.documents {
+                let commentID = doc.documentID
+                if let userID = doc.get(DatabaseCommentsField.userId) as? String,
+                   let displayName = doc.get(DatabaseCommentsField.displayName) as? String,
+                   let timeStamp = doc.get(DatabaseCommentsField.dateCreated) as? Timestamp,
+                   let content = doc.get(DatabaseCommentsField.content) as? String {
+                    let date = timeStamp.dateValue()
+                    commentsArray.append(CommentModel(commentId: commentID, userId: userID, username: displayName, content: content, date: date))
+                }
+            }
+            return commentsArray
+        } else {
+            print("No Comments found in this post!!")
+            return commentsArray
+        }
+    }
+    
     //MARK: -UPDATE Functions
     func likePost(postID: String, currentUserID: String) {
         //Update the post count
@@ -144,6 +194,21 @@ class DataService {
         ]
         
         ref_posts.document(postID).updateData(updatedData)
+    }
+    
+    func updateDisplayNameOnPosts(userID: String, displayName: String) {
+        downloadPostForUser(userID: userID) { posts in
+            for post in posts {
+                self.updatePostDisplayName(postID: post.postId, displayName: displayName)
+            }
+        }
+    }
+    
+    private func updatePostDisplayName(postID: String, displayName: String) {
+        let data: [String: Any] = [
+            DatabaseUserField.displayName: displayName
+        ]
+        ref_posts.document(postID).updateData(data)
     }
 }
 

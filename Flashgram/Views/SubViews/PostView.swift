@@ -94,7 +94,7 @@ struct PostView: View {
                     .accentColor(postModel.likedByUser ? .red : .primary)
                     
                     NavigationLink {
-                        CommentsView()
+                        CommentsView(post: postModel)
                     } label: {
                         Image(systemName: "bubble.middle.bottom")
                             .font(.title3)

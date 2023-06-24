@@ -10,6 +10,8 @@ import SwiftUI
 struct ProfileHeaderView: View {
     @Binding var profileDisplayName: String
     @Binding var profileImage: UIImage
+    @Binding var profileBio: String
+    @ObservedObject var postArray: PostArrayObject
     
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
@@ -26,15 +28,17 @@ struct ProfileHeaderView: View {
                 .fontWeight(.bold)
             
             //Bio
-            Text("This is the area where user can add bio to profile!")
-                .font(.body)
-                .fontWeight(.regular)
-                .multilineTextAlignment(.center)
+            if !profileBio.isEmpty {
+                Text(profileBio)
+                    .font(.body)
+                    .fontWeight(.regular)
+                    .multilineTextAlignment(.center)
+            }
             
             HStack(alignment: .center, spacing: 20) {
                 //Posts
                 VStack(alignment: .center, spacing: 5) {
-                    Text("5")
+                    Text(postArray.postCountString)
                         .font(.title2)
                         .fontWeight(.bold)
                     Capsule()
@@ -47,7 +51,7 @@ struct ProfileHeaderView: View {
                 
                 //Likes
                 VStack(alignment: .center, spacing: 5) {
-                    Text("15")
+                    Text(postArray.likeCountString)
                         .font(.title2)
                         .fontWeight(.bold)
                     Capsule()
@@ -66,7 +70,8 @@ struct ProfileHeaderView: View {
 
 struct ProfileHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileHeaderView(profileDisplayName: .constant("Test!"), profileImage: .constant(UIImage(systemName: "person")!))
-            .previewLayout(.sizeThatFits)
+        ProfileHeaderView(profileDisplayName: .constant("Test!"),
+                          profileImage: .constant(UIImage(systemName: "person")!), profileBio: .constant("Test Bio!"),
+                          postArray: PostArrayObject(shuffled: true))
     }
 }
