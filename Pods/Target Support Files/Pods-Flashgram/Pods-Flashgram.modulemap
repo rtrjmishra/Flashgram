@@ -1,0 +1,6 @@
+framework module Pods_Flashgram {
+  umbrella header "Pods-Flashgram-umbrella.h"
+
+  export *
+  module * { export * }
+}
